@@ -5,19 +5,19 @@ class ChartPoint {
   float size;
   
   
-  public ChartPoint(float x, float y) {
+  public ChartPoint(float x, float y, color c) {
     this.x = x;
     this.y = y;
     
     size = 3;
-    c = color (127, 0, 0);
+    this.c = c;
   }
   
   void display() {
     pushMatrix();
     translate (x, y);
-    noStroke();
     fill (c);
+    stroke(0);
     ellipse (0, 0, size, size);
     popMatrix();
   }

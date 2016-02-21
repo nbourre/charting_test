@@ -1,13 +1,14 @@
 Series s;
-ChartPoint p;
-
+Graph g;
 void setup () {
-  s = new Series();
   size (640, 480);
   
-  for (int i = 0; i < width; i += 5) {
-    s.pushPoint(new ChartPoint(i, random (0, height)));
+  s = new Series(color(255,0,0));
+  for (int i = 0; i < width; i += 10) {
+    s.pushPoint(new ChartPoint(i, random (0, height), color(0) ));
   }
+  g = new Graph(50, 50, width-100, height-100, 10);
+  g.pushSeries(s);
 }
 
 void draw () {
@@ -19,5 +20,5 @@ void update() {
 }
 
 void display () {
-  s.display();
+  g.display();
 }

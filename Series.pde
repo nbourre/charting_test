@@ -1,7 +1,9 @@
 class Series {
   ArrayList <ChartPoint> points;
+  color c;
   
-  Series () {
+  Series (color c) {
+    this.c = c;
     points = new ArrayList<ChartPoint>();
   }
   
@@ -18,7 +20,8 @@ class Series {
       
       pushMatrix();
       translate (p1.x, p1.y);
-      stroke (color(0));
+      strokeWeight(1);
+      stroke(c);
       line (0, 0, p2.x - p1.x, p2.y - p1.y);
       popMatrix();
       
