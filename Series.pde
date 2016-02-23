@@ -31,4 +31,6 @@ class Series {
     points.get(points.size() - 1).display();
     
   }
+  
+  
 }

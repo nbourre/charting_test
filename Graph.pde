@@ -1,14 +1,22 @@
 class Graph{
-  int posX, posY, sizeX, sizeY, borderWeight;
+  int w, h, borderWeight;
+  
+  PVector position;
+    
   ArrayList<Series> series;
   
- Graph(int posX, int posY, int sizeX, int sizeY, int borderWeight){
-   this.posX = posX;
-   this.posY = posY;
-   this.sizeX = sizeX;
-   this.sizeY = sizeY;
+  public Graph() {
+    this.position = new PVector();
+  }
+  
+ Graph(int x, int y, int sizeX, int sizeY, int borderWeight){
+   
+   this.w = sizeX;
+   this.h = sizeY;
    this.borderWeight = borderWeight;
    series = new ArrayList<Series>();
+   
+   this.position = new PVector(x, y);
  }
  
  void pushSeries(Series s){
@@ -16,14 +24,21 @@ class Graph{
  }
  
  void display(){
+   pushMatrix();
    rectMode(CORNER);
+   translate(position.x, position.y);
+   
    fill(255);
    stroke(0);
    strokeWeight(borderWeight);
-   rect(posX, posY, sizeX, sizeY);
+   
+   rect(0, 0, w, h);
+   
    for (int i = 0; i < series.size(); i++){
      series.get(i).display();
    }
+   
+   popMatrix();
  }
   
   

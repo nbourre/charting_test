@@ -9,7 +9,7 @@ class ChartPoint {
     this.x = x;
     this.y = y;
     
-    size = 3;
+    size = 1;
     this.c = c;
   }
   
