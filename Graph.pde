@@ -7,21 +7,37 @@ class Graph{
   ArrayList<Series> series;
   
   public Graph() {
-    limits = new Rectangle (0, 0, width, height);
+   limits = new Rectangle (0, 0, width, height);
+   this.borderWeight = 1;
+   series = new ArrayList<Series>();
   }
+  
+  public Graph (Rectangle limits) {
+    this.limits = limits;
+    this.borderWeight = 1;
+    series = new ArrayList<Series>();
+  }
+  
   
  Graph(int x, int y, int sizeX, int sizeY, int borderWeight){
    
-
    this.borderWeight = borderWeight;
+      
+   limits = new Rectangle (x, y, sizeX, sizeY);
+   
    series = new ArrayList<Series>();
    
-
-   
-   limits = new Rectangle (x, y, sizeX, sizeY);
+ }
+  
+ Rectangle getLimits() {
+   return limits;
  }
  
  void pushSeries(Series s){
+   
+   if (s.limits == null) {
+     s.limits = limits;
+   }
    series.add(s);
  }
  
