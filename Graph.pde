@@ -1,22 +1,24 @@
 class Graph{
   int w, h, borderWeight;
+  Rectangle limits;
   
-  PVector position;
+
     
   ArrayList<Series> series;
   
   public Graph() {
-    this.position = new PVector();
+    limits = new Rectangle (0, 0, width, height);
   }
   
  Graph(int x, int y, int sizeX, int sizeY, int borderWeight){
    
-   this.w = sizeX;
-   this.h = sizeY;
+
    this.borderWeight = borderWeight;
    series = new ArrayList<Series>();
    
-   this.position = new PVector(x, y);
+
+   
+   limits = new Rectangle (x, y, sizeX, sizeY);
  }
  
  void pushSeries(Series s){
@@ -26,13 +28,13 @@ class Graph{
  void display(){
    pushMatrix();
    rectMode(CORNER);
-   translate(position.x, position.y);
+   translate(limits.x, limits.y);
    
    fill(255);
    stroke(0);
    strokeWeight(borderWeight);
    
-   rect(0, 0, w, h);
+   rect(0, 0, limits.w, limits.h);
    
    for (int i = 0; i < series.size(); i++){
      series.get(i).display();

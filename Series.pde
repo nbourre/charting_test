@@ -28,8 +28,7 @@ class Series {
       if (p.x > maxX) maxX = p.x;
       if (p.y < minY) minY = p.y;
       if (p.y > maxY) maxY = p.y;
-    }
-    
+    }   
     
   }
   
