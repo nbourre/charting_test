@@ -50,6 +50,9 @@ class Graph{
    limits.y = y;
    limits.w = w;
    limits.h = h;
+   for(int i = 0; i < series.size(); i++){
+     series.get(i).setDisplayLimits(limits);
+   }
  }
  
  void display(){

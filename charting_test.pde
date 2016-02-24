@@ -56,7 +56,8 @@ void update() {
   currentSize.set(width, height);
   
   if (currentSize.x != previousSize.x || currentSize.y != previousSize.y) {
-    //g.updateLimits(,,,);
+    g.updateLimits(0, 0, width / 2, height / 2);
+    gBD.updateLimits(width / 2, height / 2, width / 2, height / 2);
   }
   previousSize.set(currentSize.x, currentSize.y);
 }
