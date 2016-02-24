@@ -5,9 +5,17 @@ Series serie_jaune;
 Graph g;
 Graph gBD; // Bas-Droit
 
+PVector currentSize;
+PVector previousSize;
+
 
 void setup () {
   size (640, 480);
+  
+  currentSize = new PVector (width, height);
+  previousSize = currentSize.copy();
+  
+  surface.setResizable(true);
     
   int graph_width = width - 100;
   int graph_height = height - 100;
@@ -45,6 +53,12 @@ void draw () {
 }
 
 void update() {
+  currentSize.set(width, height);
+  
+  if (currentSize.x != previousSize.x || currentSize.y != previousSize.y) {
+    //g.updateLimits(,,,);
+  }
+  previousSize.set(currentSize.x, currentSize.y);
 }
 
 void display () {

@@ -45,6 +45,13 @@ class Graph{
    series.add(s);
  }
  
+ public void updateLimits (float x, float y, float w, float h) {
+   limits.x = x;
+   limits.y = y;
+   limits.w = w;
+   limits.h = h;
+ }
+ 
  void display(){
    pushMatrix();
    rectMode(CORNER);
