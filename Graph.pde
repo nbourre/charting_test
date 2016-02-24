@@ -2,9 +2,9 @@ class Graph{
   int w, h, borderWeight;
   Rectangle limits;
   
-
-    
   ArrayList<Series> series;
+  
+  color bgColor = color(255);
   
   public Graph() {
    limits = new Rectangle (0, 0, width, height);
@@ -33,6 +33,10 @@ class Graph{
    return limits;
  }
  
+ void setBGColor(color c) {
+   bgColor = c;
+ }
+ 
  void pushSeries(Series s){
    
    if (s.limits == null) {
@@ -46,7 +50,7 @@ class Graph{
    rectMode(CORNER);
    translate(limits.x, limits.y);
    
-   fill(255);
+   fill(bgColor);
    stroke(0);
    strokeWeight(borderWeight);
    
