@@ -8,7 +8,7 @@ Graph gBD; // Bas-Droit
 
 void setup () {
   size (640, 480);
-  
+    
   int graph_width = width - 100;
   int graph_height = height - 100;
     
